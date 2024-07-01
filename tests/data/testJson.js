@@ -298,6 +298,91 @@ const testCases = [
             error: 0,
         },
     },
+    {
+        name: 'nodejs: arithmetic addition',
+        reqObject: {
+            language: 'nodejs',
+            script:
+                'process.stdin.setEncoding(\'utf8\'); \n ' +
+                'process.stdin.on(\'data\', (input) => { \n ' +
+                '  const [num1, num2] = input.trim().split(\' \').map(Number); \n ' +
+                '  const result = num1 + num2; \n ' +
+                '  console.log(result); \n ' +
+                '}); \n ',
+            stdin: '5 3',
+        },
+        expectedResponse: {
+            val: '8\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        name: 'nodejs : read and print input',
+        reqObject: {
+            language: 'nodejs',
+            script:
+                'process.stdin.setEncoding(\'utf8\');\n' +
+                'process.stdin.on(\'data\', (input) => {\n' +
+                '    console.log(input.trim());\n' +
+                '});\n',
+            stdin: 'Hello from stdin',
+        },
+        expectedResponse: {
+            val: 'Hello from stdin\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        name: 'java : reverse string',
+        reqObject: {
+            language: 'java',
+            script:
+                'import java.util.Scanner;\n' +
+                'public class Solution {\n' +
+                '    public static void main(String[] args) {\n' +
+                '        Scanner scanner = new Scanner(System.in);\n' +
+                '        String input = scanner.nextLine();\n' +
+                '        StringBuilder reversed = new StringBuilder(input).reverse();\n' +
+                '        System.out.println(reversed.toString());\n' +
+                '        scanner.close();\n' +
+                '    }\n' +
+                '}\n',
+            stdin: 'hello world',
+        },
+        expectedResponse: {
+            val: 'dlrow olleh\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        name: 'java : factorial calculation',
+        reqObject: {
+            language: 'java',
+            script:
+                'import java.util.Scanner;\n' +
+                'public class Solution {\n' +
+                '    public static void main(String[] args) {\n' +
+                '        Scanner scanner = new Scanner(System.in);\n' +
+                '        int n = scanner.nextInt();\n' +
+                '        int factorial = 1;\n' +
+                '        for (int i = 1; i <= n; i++) {\n' +
+                '            factorial *= i;\n' +
+                '        }\n' +
+                '        System.out.println(factorial);\n' +
+                '        scanner.close();\n' +
+                '    }\n' +
+                '}\n',
+            stdin: '5',
+        },
+        expectedResponse: {
+            val: '120\n',
+            status: 200,
+            error: 0,
+        },
+    },    
 ]
 
 module.exports = { testCases }
