@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #1e1e1e;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px;
+  color: white;
+  text-align: left;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: #2D2F34;
+  padding: 10px;
+  flex: 1;
+}
+
+.code-input, .code-output {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 85vh;
+  padding: 2px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+textarea {
+  flex: 1;
+  padding: 10px;
+  margin-top: 1em;
+  background-color: #1C2130;
+  resize: none;
+  border: 1px solid #57595D;
+}
+
+button {
+  margin-right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 30px 5px 30px;
+  border-radius: 2px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.code-output h2, .header {
+  margin: 0;
+  border-bottom: 1px solid #57595D;
+  font-size: 30px;
+  color: white;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+pre {
+  flex: 1;
+  background-color: #1C2130;
+  border: 1px solid #57595D;
+  overflow: auto;
+  color: black;
+  padding: 20px;
+  color: rgb(192, 192, 192);
+  margin-top: 16px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea, pre {
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  font-family: monospace;
+  margin-bottom: 10px;
+}
+
+.custom-dropdown {
+  display: inline-block;
+  position: relative;
+  margin-left: 15px;
+  font-size: 16px;
+  width: 150px;
+}
+
+.custom-dropdown .icon {
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #1C2130;
+  border: 1px solid #57595D;
+  cursor: pointer;
+  color: white;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #1C2130;
+  border: 1px solid #57595D;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.dropdown-item:hover, .dropdown-item.selected {
+  background-color: #007bff;
+}
