@@ -382,7 +382,7 @@ const testCases = [
             status: 200,
             error: 0,
         },
-    },    
+    }
 ]
 
 module.exports = { testCases }
